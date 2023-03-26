@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>座席表</title>
+    <!-- <link rel="stylesheet" href="zaseki.js"> -->
+   
+    <link rel="stylesheet" href="zaseki.css">
+    
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<meta name=”viewport” content=”  width = device-width, initial-scale=1”>
+</head>
+
+
+
+<body>
+    <!-- <script type="text/javascript" src="zaseki copy.js"></script> -->
+<section class="haikei">
+
+    <div class="header">
+        <strong>～ 行先明示板 ～</strong><br>
+    </div>
+
+
+    <button id="click-btn"></button>
+    <div id="popup-wrapper">
+      <div id="popup-inside">
+        <div id="close">x</div>
+        <section class="section section-secounday">
+            <h1 class="section-headline">入力画面</h1>
+    
+            <form class="form" action="">
+                <table class="form-table">
+                    <form>
+                        <div class="inputs">
+                            <!-- <label class="label">場所</label> -->
+                            <label class="label">行先</label><br>
+                            <input type="text" id="location" list="combolist">
+                            <datalist id="combolist">
+                             <option value="11号館3階">11号館3階</option>
+                             <option value="T-5実験室">T-5実験室</option>
+                             <option value="T-4実験室">T-4実験室</option>
+                             <option value="出勤時間">出勤時間</option>
+                            </datalist>
+                        </div>
+                        <div class="inputs">
+                            <label class="label">帰宅時間</label><br>
+                            <input type="text" id="period" list="combolist2">
+                            <datalist id="combolist2">
+                             <option value="17:20">17:20</option>
+                             <option value="17:50">17:50</option>
+                             <option value="18:50">18:50</option>
+                            </datalist>
+                        </div>
+                        <!-- <div class="inputs">
+                             <label class="label">出社or帰宅時間</label><br>
+                             <input type="text" id="time" list="combolist">
+                             <datalist id="combolist">
+                              <option value="test1">test1</option>
+                              <option value="test2">test2</option>
+                              <option value="test3">test3</option>
+                             </datalist>
+                        </div> -->
+                        
+                        <div id="btn-area">
+                            <input type="reset" value="リセット"><input type="button" value="  送信  " id="send">
+                        </div>
+                    </form>
+                </table>               
+            </form>
+        </section>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+
+
+<ul id="arrList" class="set-all">
+    <li>
+        <ul class="set-1">
+            <li class="people">
+                <button id="people1" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people2" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people3" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people4" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people5" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people6" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people7" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+        </ul>
+    </li>
+    <li>
+        <ul class="set-2">
+            <li class="people">
+                <button id="people8" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>         
+            </li>
+            <li class="people">
+                <button id="people9" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people10" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people11" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people12" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people13" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people14" onclick="reply_click(this.id)" class="peopl">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+        </ul> 
+    </li>
+    <li>
+        <ul class="set-3">
+            <li class="people">
+                <button id="people15" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button> 
+            </li>
+            <li class="people">
+                <button id="people16" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button> 
+            </li>
+            <li class="people">
+                <button id="people17" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people18" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people19" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people20" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people21" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+        </ul> 
+    </li>
+    <li>
+        <ul class="set-4">
+            <li class="people">
+                <button id="people22" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button> 
+            </li>
+            <li class="people">
+                <button id="people23" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button> 
+            </li>
+            <li class="people">
+                <button id="people24" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people25" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people26" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people27" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people28" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+        </ul> 
+    </li>
+    <li>
+        <ul class="set-5">
+            <li class="people">
+                <button id="people29" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button> 
+            </li>
+            <li class="people">
+                <button id="people30" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button> 
+            </li>
+            <li class="people">
+                <button id="people31" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people32" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people33" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people34" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people35" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+        </ul> 
+    </li>
+    <li>
+        <ul class="set-6">
+            <li class="people">
+                <button id="people36" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button> 
+            </li>
+            <li class="people">
+                <button id="people37" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button> 
+            </li>
+            <li class="people">
+                <button id="people38" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people39" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people40" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people41" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+            <li class="people">
+                <button id="people42" onclick="reply_click(this.id)" class="people">                
+                    <div class="name">名前</div> 
+                    <div class="area">行先</div>
+                    <div class="period">帰宅時間</div>
+                    <!-- <div class="time">帰宅時間</div>   -->
+                </button>          
+            </li>
+        </ul> 
+    </li>
+</ul>
+</section>
+
+<script type="text/javascript" src="zaseki.js"></script>
+
+</body>
+</html>
+
